@@ -37,6 +37,38 @@ def click_show_all_button(driver):
     except Exception as e:
         print(f"Error clicking 'Show all' button: {e}")
 
+
+def get_apply_link(driver):
+    jobs = driver.find_elements(By.CLASS_NAME, 'job-card-container')
+
+    for job in jobs:
+        try:
+            job.click()
+            time.sleep(2)  # Wait for job details to load
+            
+            apply_button = driver.find_element(By.CSS_SELECTOR, '.jobs-apply-button--top-card button')
+            apply_button.click()
+            time.sleep(2)  # Wait for the page to redirect
+            
+            # Handle the new tab or window
+            original_window = driver.current_window_handle
+            for window_handle in driver.window_handles:
+                if window_handle != original_window:
+                    driver.switch_to.window(window_handle)
+                    break
+            
+            # Get the current URL in the new tab/window
+            apply_link = driver.current_url
+            print(apply_link)
+            
+            # Close the new tab/window and switch back to the original
+            driver.close()
+            driver.switch_to.window(original_window)
+            time.sleep(2)
+
+        except Exception as e:
+            print(f"Error: {e}")
+
 def main():
     # Configure Selenium and ChromeDriver
     chrome_options = Options()
@@ -53,6 +85,9 @@ def main():
 
         # Click the "Show all" button
         click_show_all_button(driver)
+
+        # Get the apply link
+        get_apply_link(driver)
 
         # Keep the browser open
         input("Press any key to close the browser...")
