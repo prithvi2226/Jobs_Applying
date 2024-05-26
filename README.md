@@ -40,52 +40,6 @@ Update the following variables in the `linkedin_job_scraper.py` script with your
 LINKEDIN_USERNAME = 'your_email'
 LINKEDIN_PASSWORD = 'your_password'
 CHROME_DRIVER_PATH = '/path/to/chromedriver'
-
-
-Sure! Here’s a simple README.md for your LinkedIn job application scraper project:
-
-markdown
-Copy code
-# LinkedIn Job Application Scraper
-
-This project uses Selenium to automate the process of logging into LinkedIn, navigating to the Jobs page, and extracting application links for job postings. The script logs into LinkedIn, navigates to the Jobs page, searches for software engineering positions, and retrieves the application links for each job.
-
-## Features
-
-- Automated login to LinkedIn
-- Navigate to the LinkedIn Jobs page
-- Search for job postings
-- Extract and print application links
-
-## Prerequisites
-
-- Python 3.6+
-- Google Chrome
-- ChromeDriver
-
-## Installation
-
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/yourusername/linkedin-job-scraper.git
-    cd linkedin-job-scraper
-    ```
-
-2. Install the required Python packages:
-    ```bash
-    pip install selenium
-    ```
-
-3. Download and install [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) that matches your version of Chrome. Ensure the ChromeDriver executable is in your PATH or specify its location in the script.
-
-## Configuration
-
-Update the following variables in the `linkedin_job_scraper.py` script with your LinkedIn credentials and the path to your ChromeDriver:
-
-```python
-LINKEDIN_USERNAME = 'your_email'
-LINKEDIN_PASSWORD = 'your_password'
-CHROME_DRIVER_PATH = '/path/to/chromedriver'
 ```
 
 ### Usage
