@@ -1,23 +1,23 @@
 # Jobs_Applying
-### Updates till Now
-# LinkedIn Job Application Scraper
+## LinkedIn Job Application Scraper
 
 This project uses Selenium to automate the process of logging into LinkedIn, navigating to the Jobs page, and extracting application links for job postings. The script logs into LinkedIn, navigates to the Jobs page, searches for software engineering positions, and retrieves the application links for each job.
 
-## Features
+### Features
 
 - Automated login to LinkedIn
 - Navigate to the LinkedIn Jobs page
-- Search for job postings
-- Extract and print application links
+- Click on "Show all" buttons to reveal more job postings
+- Extract and print application links, excluding "Easy Apply" jobs
+- Analyze job application forms using OpenAI GPT to identify form fields
 
-## Prerequisites
+### Prerequisites
 
 - Python 3.6+
 - Google Chrome
 - ChromeDriver
 
-## Installation
+### Installation
 
 1. Clone this repository:
     ```bash
@@ -27,20 +27,28 @@ This project uses Selenium to automate the process of logging into LinkedIn, nav
 
 2. Install the required Python packages:
     ```bash
-    pip install selenium
+    pip install selenium openai
     ```
 
 3. Download and install [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) that matches your version of Chrome. Ensure the ChromeDriver executable is in your PATH or specify its location in the script.
 
-## Configuration
+### Configuration
 
-Update the following variables in the `linkedin_job_scraper.py` script with your LinkedIn credentials and the path to your ChromeDriver:
-
+Create a `config.py` file in the project directory with your LinkedIn credentials and OpenAI API key:
 ```python
-LINKEDIN_USERNAME = 'your_email'
-LINKEDIN_PASSWORD = 'your_password'
-CHROME_DRIVER_PATH = '/path/to/chromedriver'
-```
+linkedin_username = 'your_email'
+linkedin_password = 'your_password'
+API_key = 'your_openai_api_key'
+
+
+### Explanation of Updates
+
+- **Features**: Added features to exclude "Easy Apply" jobs and analyze job application forms using OpenAI GPT.
+- **Installation**: Added the installation of the `openai` package.
+- **Configuration**: Instructions for creating a `config.py` file for sensitive credentials.
+- **Usage**: Updated the usage section to reflect the new script name and functionalities.
+- **Code Overview**: Detailed the functions added or updated, including the OpenAI GPT integration.
+- **Example Output**: Provided a sample output format.
 
 ### Usage
 
