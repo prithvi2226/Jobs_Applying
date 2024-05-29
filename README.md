@@ -39,7 +39,7 @@ Create a `config.py` file in the project directory with your LinkedIn credential
 linkedin_username = 'your_email'
 linkedin_password = 'your_password'
 API_key = 'your_openai_api_key'
-
+```
 
 ### Explanation of Updates
 
